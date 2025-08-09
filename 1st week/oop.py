@@ -18,7 +18,6 @@ class Student(Person):
     def __init__(self, name: str, age: int, address: str, student_id: str):
         super().__init__(name, age, address)
         self.student_id = student_id
-
         self.grades = {}
         self.courses = []
 
@@ -32,8 +31,8 @@ class Student(Person):
             print("Not enrolled in course")
 
     def enroll_course(self, course):
-        if course not in self.courses:
-            self.courses.append(course)
+        if course.course_name not in self.courses:
+            self.courses.append(course.course_name)
         else:
             print("Already enrolled in course")
 
@@ -62,7 +61,7 @@ class Student(Person):
 
 
 class Course:
-    def __init__(self, course_name: str, course_code: str, instructor: str):
+    def __init__(self, course_name, course_code, instructor):
         self.course_name = course_name
         self.course_code = course_code
         self.instructor = instructor
@@ -71,6 +70,7 @@ class Course:
     def add_student(self, student):
         if student not in self.students:
             self.students.append(student)
+            student.enroll_course(self)
 
     def display_course_info(self):
         print(
@@ -78,8 +78,8 @@ class Course:
         )
 
         if self.students:
-            for name in self.students:
-                print(f"{name}")
+            for student in self.students:
+                print(f"{student.name}")
         else:
             print("kono students nai")
 

@@ -69,9 +69,6 @@ def enroll_student_course():
         print("No course found")
         return
 
-    # print(json.dumps(vars(course), indent=4, default=str))
-    # print(json.dumps(vars(student), indent=4))
-
     course.add_student(student)
 
     print(
@@ -93,8 +90,12 @@ def add_grade_for_student():
     course = courses.get(course_code)
 
     #  Ensure students are enrolled in a course before assigning grades
-    if student not in course.students:
-        print("Please enroll first before adding grade")
+    if not student or not course:
+        print("Student or course not found. ")
+        return
+
+    if course.course_name not in student.courses:
+        print("Student in not enrolled in course")
         return
 
     student.add_grade(course.course_name, grade)
@@ -160,7 +161,16 @@ def save_data():
                     "course_name": course.course_name,
                     "course_code": course.course_code,
                     "instructor": course.instructor,
-                    "students": [student.student_id for student in course.students],
+                    "students": {
+                        student.student_id: {
+                            "name": student.name,
+                            "age": student.age,
+                            "address": student.address,
+                            "grades": student.grades,
+                            "courses": student.courses,
+                        }
+                        for student in course.students
+                    },
                 }
                 for course_id, course in courses.items()
             },
@@ -181,45 +191,16 @@ def save_data():
 def load_data():
     with open("data.json", "r") as f:
         data = json.load(f)
-        f_data = json.dumps(data, indent=4)
 
-        print(f_data)
+        for student_id, student_info in data["students"].items():
+            print("Student ID ->", student_id)
+            print(json.dumps(student_info, indent=4))
+
+        for course_code, course_info in data["courses"].items():
+            print("Course code ->", course_code)
+            print(json.dumps(course_info, indent=4))
+
         print("Data loaded successfully.")
 
 
 # load_data()
-
-# Sample Input / Output
-
-while True:
-    print("==== Student Management System ====")
-    print("1. Add New Student\n2. Add New Course")
-    print("3. Enroll Student in Course\n4. Add Grade for Student")
-    print("5. Display Student Details\n6. Display Course Details")
-    print("7. Save Data to File\n8. Load Data from File\n0. Exit")
-
-    choice = input("\nEnter your choice:")
-
-    if choice == "1":
-        add_new_student()
-    elif choice == "2":
-        add_new_course()
-    elif choice == "3":
-        enroll_student_course()
-    elif choice == "4":
-        add_grade_for_student()
-    elif choice == "5":
-        display_student_details()
-    elif choice == "6":
-        display_course_details()
-    elif choice == "7":
-        save_data()
-    elif choice == "8":
-        load_data()
-
-    elif choice == "0":
-        print("Exiting Student Management System. Goodbye!")
-        break
-
-    else:
-        print("Invalid choice. Choice must be 0 - 8")
