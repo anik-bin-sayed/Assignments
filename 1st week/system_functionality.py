@@ -123,6 +123,7 @@ def display_student_details():
 
 
 # display_student_details()
+# display_student_details()
 
 # # 6. Display Course Details
 
@@ -139,6 +140,7 @@ def display_course_details():
     course.display_course_info()
 
 
+# display_course_details()
 # display_course_details()
 
 
@@ -185,6 +187,7 @@ def save_data():
         print("Failed to save data", exp)
 
 
+# save_data()
 # save_data()
 
 

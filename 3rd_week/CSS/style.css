@@ -1,0 +1,536 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+.btn {
+  border: 1.4px solid #458ff6;
+  color: #458ff6;
+  font-weight: 700;
+  width: 170px;
+  height: 50px;
+  font-size: 16px;
+  background: none;
+  border-radius: 55px;
+  cursor: pointer;
+}
+
+header {
+  width: 100%;
+  background-color: #fff;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.header {
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+}
+
+.nav__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  width: 160px;
+  height: auto;
+}
+
+/* Nav Links */
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  transition: all 0.3s ease;
+}
+
+.nav__links li a {
+  text-decoration: none;
+  color: #1f1534;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav__links li a:hover {
+  color: #458ff6;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: #000000;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* hero section */
+.hero {
+  background-color: #fff;
+}
+.hero__section {
+  width: 80%;
+  margin: 30px auto;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+
+.hero__content {
+  max-width: 445px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.hero__content h1 {
+  color: black;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+}
+
+.hero__content p {
+  color: #7d7987;
+  font-weight: 300;
+  font-size: 21px;
+  line-height: 32px;
+}
+
+.hero__content a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  border-radius: 55px;
+  background-color: #1c67e3;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.hero__content a:hover {
+  background-color: #1451c1;
+}
+
+.hero__image img {
+  width: 493px;
+  height: auto;
+}
+
+/* service section */
+
+.service__title__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.service__title__content h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.service_title_underline {
+  width: 56px;
+  height: 2px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #000000;
+  margin: 30px 0;
+}
+
+.service__title__content p {
+  color: #7d7987;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  width: 70%;
+  padding: 0;
+}
+
+.service__cards__container {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.service_cards {
+  padding: 50px;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(3, 0fr);
+  gap: 40px;
+}
+
+.service__card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 300px;
+  height: 310px;
+  border-radius: 20px;
+  background-color: #fff;
+  border: 1px solid #fcfbfb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.service__card img {
+  width: 130px;
+  height: auto;
+}
+
+.service__card h3 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 56px;
+  letter-spacing: 0%;
+}
+
+.service__card p {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: #7d7987;
+}
+
+/* Leading healthcare providers */
+.leading__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 100px;
+  padding: 20px;
+  gap: 30px;
+}
+
+.image img {
+  width: 550px;
+  height: auto;
+}
+
+.leading__details {
+  width: 486px;
+}
+
+.leading__details h2 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.leading_title_underline {
+  width: 56px;
+  height: 2px;
+  background-color: #000;
+  border-radius: 5px;
+  margin: 30px 0;
+}
+
+.leading__details p {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 300;
+  color: #7d7987;
+  margin-bottom: 20px;
+}
+
+/* reviews */
+.review__content {
+  color: #fff;
+  border-radius: 20px;
+  background: linear-gradient(208.18deg, #67c3f3 9.05%, #5a98f2 76.74%);
+  padding: 20px 30px;
+  margin: 100px 60px 0px 60px;
+}
+
+.review__title {
+  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.review__content h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.review_title_underline {
+  width: 56px;
+  height: 2px;
+  background-color: #fff;
+}
+
+.review__cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 40px 50px 50px;
+}
+
+.review__card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.user_image {
+  width: 141px;
+  height: 141px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user_details h3 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.user_details p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.review__card2 {
+  width: 420px;
+}
+
+.review__card2 p {
+  font-size: 18px;
+  font-weight: 400px;
+}
+
+.carosol_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 20px;
+}
+.carosol_icon i {
+  font-size: 20px;
+  font-weight: 800px;
+  color: #458ff6;
+}
+
+.carosol_icon :first-child {
+  color: #bfd2ec;
+}
+
+.dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #bfd2ec;
+  display: inline-block;
+}
+
+.dot span.active {
+  background-color: #5b9bf3;
+}
+
+/* check out latest article */
+
+.latest__article {
+  margin-top: 150px;
+}
+
+.latest__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.latest__content h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.latest_title_underline {
+  width: 56px;
+  height: 2px;
+  background-color: #000;
+  margin: 30px 0 60px 0px;
+}
+
+.article_cards {
+  display: grid;
+  grid-template-columns: repeat(3, 0fr);
+  gap: 30px;
+}
+
+.article_card {
+  width: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 4px #f1f1f1;
+}
+
+.article_card img {
+  object-fit: cover;
+  width: 350px;
+}
+
+.card_details {
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card_details h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.card_details article {
+  font-size: 16px;
+  font-weight: 300;
+  color: #7d7987;
+}
+
+.read__more {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+}
+
+.read__more a {
+  color: #4089ed;
+  text-decoration: none;
+}
+.read__more i {
+  color: #4089ed;
+  text-decoration: none;
+}
+
+.article__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Footer */
+
+.footer {
+  margin: 100px 0 0 0;
+  padding: 70px 0;
+  background: linear-gradient(183.41deg, #67c3f3 -8.57%, #5a98f2 82.96%);
+  color: #fff;
+}
+
+.footer__section {
+  display: flex;
+  gap: 100px;
+}
+
+.main__section {
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 20px;
+}
+
+.footer__text {
+  font-size: 18px;
+  font-weight: 300;
+  color: #fff;
+  width: 100%;
+}
+
+.footer__content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 0fr);
+  gap: 150px;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 25px;
+  width: 150px;
+}
+
+.footer__links h4 {
+  font-size: 20px;
+  font-weight: 700;
+}
+.links {
+  display: flex;
+}
+.links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.links ul li {
+  list-style-type: none;
+}
+.links ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+}
